@@ -14,6 +14,11 @@ Usage:
     ./image2canvas.py <path-to-image>
 
 The generated code is written to standard out.
+
+Note that this utility is probably not very useful. The generated
+HTML/JavaScript code can be hefty in size (e.g., 25 KB JPEG -> 486
+KB!) since no effort was made to compress the data and the bitwise
+operations can be a performance drain.
 """
 
 __author__ = 'Aryan Naraghi (aryan.naraghi@gmail.com)'
@@ -77,9 +82,8 @@ def main(argv):
                 argv[0]))
 
     filename = argv[1]
-    img = Image.open(filename)
+    img = ImageOps.grayscale(Image.open(filename))
 
-    img = ImageOps.grayscale(img)
     packed_grayscales = []
     data = img.getdata()
     for i in xrange(0, len(data), 4):
