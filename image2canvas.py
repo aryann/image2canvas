@@ -30,7 +30,7 @@ import sys
 import textwrap
 
 
-_TEMPLATE = textwrap.dedent("""
+_TEMPLATE = textwrap.dedent("""\
     <!doctype html>
     <html>
       <body>
