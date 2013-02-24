@@ -1,4 +1,4 @@
-image-to-canvas
+image2canvas
 ===============
 
 A small utility that generates grayscale JavaScript canvas code for an
